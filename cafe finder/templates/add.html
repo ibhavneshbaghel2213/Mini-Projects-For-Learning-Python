@@ -1,0 +1,100 @@
+<!--Don't forget your import here-->
+{% extends 'base.html' %}
+{{ boostrap.load_css() }}
+{% from 'bootstrap4/form.html' import render_form %}
+
+{% block content %}
+<head>
+  <style>
+    .wrapper, html { 
+      height: 100%;
+      width: 100%;
+      left:0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #1a1a19, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+      background-size: 1800% 1800%;
+
+      -webkit-animation: rainbow 18s ease infinite;
+      -z-animation: rainbow 18s ease infinite;
+      -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;}
+
+    @-webkit-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-moz-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-o-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @keyframes rainbow { 
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+  </style>
+</head>
+
+<div class="wrapper">
+  <div class="row">
+    <div class="formbold-form-wrapper">
+      <div class="formbold-form-title">
+        <h1>Add a new cafe into the database</h1>
+      </div>
+      {{ render_form(form,novalidate=True)}}
+      <!-- <form action="{{url_for('cafes')}}" method="post" novalidate="True">
+        {{ form.csrf_token() }}
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{ form.cafe.label }}</div>
+        <div class="formbold-form-input">{{form.cafe}}</div> 
+        </div>
+        <br>
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{ form.link.label}}</div>
+        <div class="formbold-form-input">{{form.link}}</div>
+        </div>
+        <br>
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{form.open.label}} </div>
+        <div class="formbold-form-input">{{form.open}}</div>
+        </div>
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{form.close.label}}</div>
+        <div class="formbold-form-input">{{form.close}}</div>
+        </div>
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{form.coffee.label}} </div>
+        <div class="formbold-form-input">{{form.coffee}}</div>
+        </div>
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{form.wifi.label}}</div>
+        <div class="formbold-form-input">{{form.wifi}}</div>
+        </div>
+        
+        <div class="formbold-input-flex">
+        <div class="formbold-form-label">{{form.power.label}} </div>
+        <div class="formbold-form-input">{{form.power}}</div>
+        </div>
+        <br>
+        <br>
+        <button class="formbold-btn"> <input type="submit" value="Go"> </button>
+      </form> -->
+
+      <!-- This is where your WTForm will go -->
+
+	  <a class="btn btn-warning btn-lg" href="/cafes">See all cafes</a>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
