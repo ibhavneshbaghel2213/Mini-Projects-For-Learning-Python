@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add these lines to include Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Other head content -->
+</head>
+<body>
+    <!-- Your HTML content -->
+    {% block content %}
+    <div class="container my-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 text-center">
+            <h1 class="display-4">CRUD Application</h1>
+            <p class="lead">Manage your user records.</p>
+            <a href="{% url 'user_list' %}" class="btn btn-primary btn-lg">View User List</a>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+</body>
+</html>
+
+
+
+

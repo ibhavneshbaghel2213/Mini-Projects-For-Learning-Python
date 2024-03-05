@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add these lines to include Bootstrap CSS via CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Other head content -->
+</head>
+<body>
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center" >
+    <div class="col-md-6">
+      <div class="card">
+        <h2 class="card-header text-danger">{% if user.id %}Edit User{% else %}Create User{% endif %}</h2>
+        <div class="card-body">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+              {{ form.name.label_tag }}
+              {{ form.name }}
+            </div>
+            <div class="form-group">
+              {{ form.photo.label_tag }}
+              {{ form.photo }}
+            </div>
+            <div class="form-group">
+              {{ form.email.label_tag }}
+              {{ form.email }}
+            </div>
+            <div class="form-group">
+              {{ form.password.label_tag }}
+              {{ form.password }}
+            </div>
+            <div class="form-group">
+              {{ form.mobile_number.label_tag }}
+              {{ form.mobile_number }}
+            </div>
+            <div class="form-group">
+              {{ form.date_of_birth.label_tag }}
+              {{ form.date_of_birth }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="background-color: #ff6666;">{% if user.id %}Update{% else %}Create{% endif %}</button>
+          </form>
+        </div>
+        <div class="card-footer">
+          <a href="{% url 'user_list' %}" class="btn btn-secondary btn-block mt-3" style="color: #0e1e86;">Back to User List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

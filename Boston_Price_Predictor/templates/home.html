@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>prediction page</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style> 
+
+    .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+
+    }
+    input[type=text] {
+      width: 50%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      background-color: white;
+      background-image: url('searchicon.png');
+      background-position: 10px 10px; 
+      background-repeat: no-repeat;
+      padding: 12px 20px 14px 40px;
+    }
+    body {
+        background-color: #c3e7e7;
+      }
+      .predictor_class {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        position: absolute;
+        right: 600px;
+        width: 300px;
+        border: 2px solid #0000ff;
+        padding: 50px;
+      }
+    </style>
+</head>
+
+<<<<<<< HEAD
+<body> 
+=======
+<body>
+>>>>>>> b7149cb507b8cca8479156a74f435d8675839775
+ <div class="Main">
+    <div class= "heading">
+	<h1>Boston Price Prediction</h1>
+    </div>
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+        <input type="text" name="B" placeholder="B" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+
+       
+
+        <button type="submit" class="button_class">Predict</button>
+    </form>
+
+   <br>
+  
+   
+ </div>
+ <div class= "predictor_class"
+ <h2>
+ {{predicted_value}}
+ </h2>
+</div>
+</body>
+</html>
